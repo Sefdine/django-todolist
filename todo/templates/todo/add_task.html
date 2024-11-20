@@ -1,0 +1,23 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+<h1 class="text-center">Add a New Task</h1>
+<div class="card mt-4">
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="title" class="form-label">Task Title</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Enter task">
+                <br>
+                <label for="description" class="form-label">Task Description</label>
+                <input type="text" class="form-control" id="description" name="description" placeholder="Enter Description">
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Add Task</button>
+        </form>
+    </div>
+</div>
+<div class="text-center mt-3">
+    <a href="/" class="btn btn-secondary">Back to Tasks</a>
+</div>
+{% endblock %}
